@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Next.js
+.next/
+out/
+build
+
+# Environment
+.env*
+.env.local
+
+# Debug
+npm-debug.log*
+
+# Package files
+package-lock.json
