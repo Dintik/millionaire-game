@@ -1,0 +1,32 @@
+@use '@/assets/styles/resources' as *;
+
+// .button {}
+
+.linkButton {
+  width: 100%;
+  max-width: 296px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: $primary_color2;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 116%;
+
+  @media (min-width: $dt_bp) {
+    padding: 20px 24px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $primary_color3;
+    }
+  }
+
+  &:active {
+    background-color: $primary_color1;
+  }
+}

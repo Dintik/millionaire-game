@@ -1,0 +1,17 @@
+@use '@/assets/styles/resources' as *;
+
+.pageContainer {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: $container_sp;
+  max-height: 504px;
+  min-height: max-content;
+  padding: $sp_padding;
+
+  @media (min-width: $dt_bp) {
+    max-height: none;
+    max-width: $container_dt;
+    padding: $dt_padding;
+  }
+}

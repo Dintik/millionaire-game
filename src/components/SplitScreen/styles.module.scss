@@ -1,0 +1,63 @@
+@use '@/assets/styles/resources' as *;
+
+.introScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 48px;
+  height: 100%;
+
+  @media (min-width: $dt_bp) {
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 75px;
+    flex-direction: row;
+    gap: 32px;
+    height: auto;
+    min-height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 12px;
+
+    @media (min-width: $dt_bp) {
+      width: 624px;
+      justify-content: center;
+      gap: 64px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    transform: translateX(8px);
+
+    @media (min-width: $dt_bp) {
+      width: 624px;
+      height: 367px;
+      transform: none;
+    }
+  }
+
+  &__textBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    @media (min-width: $dt_bp) {
+      gap: 10px;
+    }
+  }
+
+  &__description {
+    margin-top: 9px;
+    opacity: 0.5;
+
+    @media (min-width: $dt_bp) {
+      margin-top: 44px;
+    }
+  }
+}

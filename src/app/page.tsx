@@ -1,10 +1,19 @@
-import Link from 'next/link'
+import { SplitScreen } from '@/components/SplitScreen'
+import { SplitBackground } from '@/components/ui/SplitBackground'
 
 export default function Home() {
   return (
     <>
-      <h1>Home Page</h1>
-      <Link href='/game'>Start</Link>
+      <SplitScreen
+        title={
+          <>
+            Who wants to be <br /> a millionaire?
+          </>
+        }
+        linkHref='/game'
+        linkText='Start'
+      />
+      <SplitBackground />
     </>
   )
 }

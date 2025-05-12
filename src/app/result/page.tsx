@@ -1,10 +1,12 @@
-import Link from 'next/link'
+import { SplitScreen } from '@/components/SplitScreen'
 
 export default function ResultPage() {
   return (
-    <>
-      <h1>Result Page</h1>
-      <Link href='/game'>Try again</Link>
-    </>
+    <SplitScreen
+      title='$8,000 earned'
+      description='Total score:'
+      linkHref='/game'
+      linkText='Try again'
+    />
   )
 }

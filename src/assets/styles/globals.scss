@@ -34,16 +34,28 @@ button {
 
 h1,
 h2 {
+  text-align: center;
   font-weight: 600;
-  font-size: 56px;
+  font-size: 32px;
   line-height: 116%;
+
+  @media (min-width: $dt_bp) {
+    font-size: 56px;
+    text-align: left;
+  }
 }
 
 h3,
 h4,
 h5,
 h6 {
+  text-align: center;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 18px;
   line-height: 116%;
+
+  @media (min-width: $dt_bp) {
+    font-size: 32px;
+    text-align: left;
+  }
 }
