@@ -1,0 +1,13 @@
+@use '@/assets/styles/resources' as *;
+
+.notFound {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+  gap: 20px;
+}
