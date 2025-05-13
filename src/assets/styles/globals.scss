@@ -29,7 +29,15 @@ a {
 }
 
 button {
-  color: $secondary_color4;
+  color: $secondary_color1;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 116%;
+
+  @media (min-width: $dt_bp) {
+    font-size: 20px;
+  }
 }
 
 h1,

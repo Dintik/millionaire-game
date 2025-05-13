@@ -1,9 +1,10 @@
 import { SplitScreen } from '@/components/SplitScreen'
+import { PageContainer } from '@/components/ui/PageContainer'
 import { SplitBackground } from '@/components/ui/SplitBackground'
 
 export default function Home() {
   return (
-    <>
+    <PageContainer>
       <SplitScreen
         title={
           <>
@@ -14,6 +15,6 @@ export default function Home() {
         linkText='Start'
       />
       <SplitBackground />
-    </>
+    </PageContainer>
   )
 }

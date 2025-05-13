@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { PageContainer } from '@/components/ui/PageContainer'
 import '@/assets/styles/globals.scss'
 
 const inter = Inter({
@@ -20,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.variable}>
-        <PageContainer>{children}</PageContainer>
-      </body>
+      <body className={inter.variable}>{children}</body>
     </html>
   )
 }

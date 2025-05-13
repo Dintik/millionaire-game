@@ -11,18 +11,17 @@ interface ButtonProps {
   target?: string
 }
 
-export const Button = ({
+export const DiamondButton = ({
   children,
   className,
   onClick,
   disabled,
 }: ButtonProps) => (
-  <button
-    className={`${styles.button} ${disabled ? styles.button__disabled : ''} ${className}`}
-    onClick={onClick}
-    disabled={disabled}>
-    {children}
-  </button>
+  <div className={`${styles.button__wrapper} ${className}`}>
+    <button className={styles.button} onClick={onClick} disabled={disabled}>
+      <div className={styles.button__inner}>{children}</div>
+    </button>
+  </div>
 )
 
 export const LinkButton = ({
