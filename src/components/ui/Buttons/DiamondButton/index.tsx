@@ -1,16 +1,14 @@
 import { ReactNode } from 'react'
-import Link from 'next/link'
 import styles from './styles.module.scss'
 
 interface ButtonProps {
   children?: ReactNode
   className?: string
   onClick?: () => void
-  href?: string
   isSelected?: boolean
   isWrong?: boolean
   isCorrect?: boolean
-  target?: string
+  isDisabled?: boolean
 }
 
 export const DiamondButton = ({
@@ -20,29 +18,14 @@ export const DiamondButton = ({
   isSelected,
   isWrong,
   isCorrect,
+  isDisabled,
 }: ButtonProps) => (
   <div
     className={`${styles.button__wrapper} ${isSelected && styles.button__selected} ${ isWrong &&
-      styles.button__wrong } ${isCorrect && styles.button__correct} ${className}`}>
-    <button
-      className={styles.button}
-      onClick={onClick}
-      disabled={isWrong || isCorrect}>
+      styles.button__wrong } ${isCorrect && styles.button__correct} ${ isDisabled &&
+      styles.button__disabled } ${className}`}>
+    <button className={styles.button} onClick={onClick} disabled={isDisabled}>
       <div className={styles.button__inner}>{children}</div>
     </button>
   </div>
-)
-
-export const LinkButton = ({
-  children,
-  className,
-  href = '/',
-  target = '_self',
-}: ButtonProps) => (
-  <Link
-    className={`${styles.linkButton} ${className}`}
-    href={href}
-    target={target}>
-    {children}
-  </Link>
 )

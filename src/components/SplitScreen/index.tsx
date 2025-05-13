@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Image from 'next/image'
-import { LinkButton } from '@/components/ui/Buttons'
+import { LinkButton } from '@/components/ui/Buttons/LinkButton'
 import HandImage from '@/assets/images/hand.svg'
 import styles from './styles.module.scss'
 
@@ -25,6 +25,7 @@ export function SplitScreen({
         alt='Thumbs up emoji'
         width={272}
         height={162}
+        priority
       />
       <div className={styles.introScreen__content}>
         <div className={styles.introScreen__textBlock}>

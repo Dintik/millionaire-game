@@ -1,0 +1,161 @@
+@use '@/assets/styles/resources' as *;
+@use 'sass:color';
+
+.button {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  border: none;
+  cursor: pointer;
+  background-color: $secondary_color2;
+  mask: url('/rectangleMask.svg');
+  text-align: left;
+  transition: background-color 0.2s ease;
+
+  &__wrapper {
+    position: relative;
+    padding: 0 16px;
+
+    &::before,
+    &::after {
+      transition: background-color 0.2s ease;
+      background-color: $secondary_color2;
+      transform: translateY(-50%);
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 1px;
+    }
+
+    &::before {
+      top: 50%;
+      left: 0;
+    }
+
+    &::after {
+      top: 50%;
+      right: 0;
+    }
+  }
+
+  &__inner {
+    transition: background-color 0.2s ease;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    padding: 19px 26px;
+    background-color: $secondary_color4;
+    mask: url('/rectangleMask.svg');
+
+    @media (min-width: $dt_bp) {
+      gap: 9px;
+      padding: 23px 32px;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &__wrapper:not(.button__wrong):not(.button__correct):not(
+        .button__disabled
+      ):has(> &:hover)::before,
+    &__wrapper:not(.button__wrong):not(.button__correct):not(
+        .button__disabled
+      ):has(> &:hover)::after {
+      background-color: $primary_color2;
+    }
+  }
+
+  &__selected {
+    &::before,
+    &::after {
+      background-color: $primary_color2;
+    }
+
+    .button {
+      background-color: $primary_color2;
+
+      &__inner {
+        background-color: $primary_color4;
+      }
+    }
+  }
+
+  &__wrong {
+    &::before,
+    &::after {
+      animation: flash-wrong 1s ease-in-out 2 forwards;
+    }
+
+    .button {
+      animation: flash-wrong 1s ease-in-out 2 forwards;
+
+      &__inner {
+        animation: flash-wrong-inner 1s ease-in-out 2 forwards;
+      }
+    }
+  }
+
+  &__correct {
+    &::before,
+    &::after {
+      animation: flash-correct 1s ease-in-out 2 forwards;
+    }
+
+    .button {
+      animation: flash-correct 1s ease-in-out 2 forwards;
+
+      &__inner {
+        animation: flash-correct-inner 1s ease-in-out 2 forwards;
+      }
+    }
+  }
+
+  &__disabled {
+    .button {
+      background-color: $secondary_color2;
+      cursor: auto;
+    }
+  }
+}
+
+@keyframes flash-wrong {
+  0%,
+  100% {
+    background-color: $wrong_color_border;
+  }
+  50% {
+    background-color: color.adjust($wrong_color_border, $lightness: 20%);
+  }
+}
+
+@keyframes flash-wrong-inner {
+  0%,
+  100% {
+    background-color: $wrong_color_bg;
+  }
+  50% {
+    background-color: color.adjust($wrong_color_bg, $lightness: 20%);
+  }
+}
+
+@keyframes flash-correct {
+  0%,
+  100% {
+    background-color: $right_color_border;
+  }
+  50% {
+    background-color: color.adjust($right_color_border, $lightness: 20%);
+  }
+}
+
+@keyframes flash-correct-inner {
+  0%,
+  100% {
+    background-color: $right_color_bg;
+  }
+  50% {
+    background-color: color.adjust($right_color_bg, $lightness: 20%);
+  }
+}
