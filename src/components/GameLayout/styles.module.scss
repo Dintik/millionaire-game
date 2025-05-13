@@ -1,0 +1,17 @@
+@use '@/assets/styles/resources' as *;
+
+.gameLayout {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  max-width: $container_sp;
+  max-height: 568px;
+  min-height: max-content;
+  margin: 0 auto;
+
+  @media (min-width: $dt_bp) {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+  }
+}

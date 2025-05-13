@@ -7,17 +7,19 @@
   border: none;
   cursor: pointer;
   background-color: $secondary_color2;
-  border-radius: 24px;
-  clip-path: $clip_path;
+  mask: url('/rectangleMask.svg');
   text-align: left;
+  transition: background-color 0.2s ease;
 
   &__wrapper {
     position: relative;
-    padding: 0 17px;
+    padding: 0 16px;
 
     &::before,
     &::after {
+      transition: background-color 0.2s ease;
       background-color: $secondary_color2;
+      transform: translateY(-50%);
       content: '';
       position: absolute;
       width: 18px;
@@ -36,15 +38,79 @@
   }
 
   &__inner {
+    transition: background-color 0.2s ease;
     display: flex;
-    gap: 4px;
+    gap: 11px;
     align-items: center;
     width: 100%;
     height: inherit;
-    padding: 16px 32px;
+    padding: 19px 26px;
     background-color: $secondary_color4;
-    border-radius: 23px;
-    clip-path: $clip_path;
+    mask: url('/rectangleMask.svg');
+
+    @media (min-width: $dt_bp) {
+      gap: 9px;
+      padding: 23px 32px;
+    }
+  }
+
+  &__selected {
+    &::before,
+    &::after {
+      background-color: $primary_color2;
+    }
+
+    .button {
+      background-color: $primary_color2;
+
+      &__inner {
+        background-color: $primary_color4;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .button:hover .button__inner {
+        background-color: $secondary_color4;
+      }
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &__wrapper:not(.button__wrong):not(.button__correct):has(> &:hover)::before,
+    &__wrapper:not(.button__wrong):not(.button__correct):has(> &:hover)::after {
+      background-color: $primary_color2;
+    }
+  }
+
+  &__wrong {
+    &::before,
+    &::after {
+      background-color: $wrong_color_border;
+    }
+
+    .button {
+      background-color: $wrong_color_border;
+
+      &__inner {
+        background-color: $wrong_color_bg;
+      }
+    }
+  }
+
+  &__correct {
+    &::before,
+    &::after {
+      background-color: $right_color_border;
+    }
+
+    .button {
+      background-color: $right_color_border;
+
+      &__inner {
+        background-color: $right_color_bg;
+      }
+    }
   }
 }
 

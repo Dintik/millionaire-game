@@ -1,0 +1,60 @@
+@use '@/assets/styles/resources' as *;
+
+.question {
+  width: 100%;
+  max-width: 1064px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 137px 0 24px;
+
+  @media (min-width: $dt_bp) {
+    margin: auto;
+    height: 900px;
+    gap: 48px;
+    padding: 133px $dt_padding 122px;
+  }
+
+  &__title {
+    max-width: 624px;
+    padding: 0 $sp_padding;
+
+    @media (min-width: $dt_bp) {
+      padding: 0;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 844px;
+    row-gap: 7px;
+
+    @media (min-width: $dt_bp) {
+      row-gap: 32px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @media (min-width: $dt_bp) {
+      width: 50%;
+    }
+
+    &:nth-of-type(odd):last-of-type {
+      width: 100%;
+    }
+
+    span {
+      font-size: 14px;
+      color: $primary_color2;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: 600;
+    }
+  }
+}

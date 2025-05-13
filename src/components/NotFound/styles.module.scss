@@ -1,6 +1,7 @@
 @use '@/assets/styles/resources' as *;
 
 .notFound {
+  padding: $sp_padding;
   height: 100%;
   text-align: center;
   display: flex;
@@ -10,4 +11,14 @@
   max-width: 800px;
   margin: auto;
   gap: 20px;
+
+  &__description {
+    font-size: 14px;
+    max-width: $container_sp;
+
+    @media (min-width: $dt_bp) {
+      max-width: $container_dt;
+      font-size: 16px;
+    }
+  }
 }

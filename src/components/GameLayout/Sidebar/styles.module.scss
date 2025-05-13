@@ -1,0 +1,129 @@
+@use '@/assets/styles/resources' as *;
+
+.sidebar {
+  &__content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: $page_bg;
+    min-height: 100vh;
+    padding: 56px $sp_padding 24px;
+    display: flex;
+    overflow-x: hidden;
+    margin: auto;
+
+    @media (min-width: $dt_bp) {
+      height: 100%;
+      align-items: center;
+      position: static;
+      background-color: $sidebar_bg;
+      min-width: 376px;
+      padding: 68px;
+    }
+  }
+
+  &__contentClosed {
+    display: none;
+
+    @media (min-width: $dt_bp) {
+      display: flex;
+    }
+  }
+
+  &__menuButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+
+    @media (min-width: $dt_bp) {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    width: 100%;
+    height: max-content;
+    text-align: center;
+
+    li {
+      margin: 8px auto;
+      position: relative;
+      font-size: 14px;
+      max-width: 240px;
+
+      @media (min-width: $dt_bp) {
+        font-size: 20px;
+      }
+
+      &::before,
+      &::after {
+        transform: translateY(-50%);
+        z-index: 1;
+        background-color: $secondary_color2;
+        content: '';
+        position: absolute;
+        width: 41px;
+        height: 1px;
+
+        @media (min-width: $dt_bp) {
+          width: 101px;
+        }
+      }
+
+      &::before {
+        top: 50%;
+        left: -40px;
+
+        @media (min-width: $dt_bp) {
+          left: -100px;
+        }
+      }
+
+      &::after {
+        top: 50%;
+        right: -40px;
+
+        @media (min-width: $dt_bp) {
+          right: -100px;
+        }
+      }
+    }
+  }
+
+  &__itemBorder {
+    padding: 1px;
+    background-color: $secondary_color2;
+    mask: url('/rectangleMask.svg');
+  }
+
+  &__itemInner {
+    padding: 6px 24px 7px;
+    background-color: $secondary_color4;
+    mask: url('/rectangleMask.svg');
+
+    @media (min-width: $dt_bp) {
+      padding-top: 7px;
+    }
+  }
+
+  li.sidebar__itemActive {
+    color: $primary_color2;
+
+    ~ li {
+      color: $secondary_color2;
+    }
+
+    &::before,
+    &::after {
+      background-color: $primary_color2;
+    }
+
+    .sidebar__itemBorder {
+      background-color: $primary_color2;
+    }
+  }
+}

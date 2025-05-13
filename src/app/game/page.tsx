@@ -1,10 +1,5 @@
-import Link from 'next/link'
+import { GameLayout } from '@/components/GameLayout'
 
 export default function GamePage() {
-  return (
-    <>
-      <h1>Game Page</h1>
-      <Link href='/result'>Finish</Link>
-    </>
-  )
+  return <GameLayout />
 }
