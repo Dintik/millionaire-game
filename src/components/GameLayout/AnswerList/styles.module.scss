@@ -1,0 +1,33 @@
+@use '@/assets/styles/resources' as *;
+
+.answerList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 844px;
+  row-gap: 7px;
+
+  @media (min-width: $dt_bp) {
+    row-gap: 32px;
+  }
+
+  &__button {
+    width: 100%;
+
+    @media (min-width: $dt_bp) {
+      width: 50%;
+    }
+
+    &:nth-of-type(odd):last-of-type {
+      width: 100%;
+    }
+
+    span {
+      font-size: 14px;
+      color: $primary_color2;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: 600;
+    }
+  }
+}

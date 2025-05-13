@@ -31,7 +31,7 @@
     "id": 5,
     "question": "How old your elder brother was 10 years before you was born, mate?",
     "answers": ["10 years", "11 years", "12 years", "14 years"],
-    "correctAnswers": [1, 2],
+    "correctAnswers": [0],
     "reward": 8000
   },
   {
@@ -85,7 +85,7 @@
     "id": 12,
     "question": "Which is a day of the week?",
     "answers": ["January", "Monday", "March", "Summer", "Sunday", "Tuesday"],
-    "correctAnswers": [1, 4],
+    "correctAnswers": [1, 4, 5],
     "reward": 1000000
   }
 ]
