@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "question": "What color is the sky on a clear day?",
+    "answers": ["Blue", "Green", "Red", "Yellow"],
+    "correctAnswers": [0],
+    "reward": 500
+  },
+  {
+    "id": 2,
+    "question": "How many legs does a cat have?",
+    "answers": ["Two", "Four", "Six", "Eight"],
+    "correctAnswers": [1],
+    "reward": 1000
+  },
+  {
+    "id": 3,
+    "question": "Which of these animals can fly?",
+    "answers": ["Dog", "Bird", "Bat", "Elephant"],
+    "correctAnswers": [1, 2],
+    "reward": 2000
+  },
+  {
+    "id": 4,
+    "question": "Which number comes after 3?",
+    "answers": ["1", "2", "4", "5"],
+    "correctAnswers": [2],
+    "reward": 4000
+  },
+  {
+    "id": 5,
+    "question": "How old your elder brother was 10 years before you was born, mate?",
+    "answers": ["10 years", "11 years", "12 years", "14 years"],
+    "correctAnswers": [1, 2],
+    "reward": 8000
+  },
+  {
+    "id": 6,
+    "question": "Which animal says 'meow'?",
+    "answers": ["Dog", "Cow", "Cat", "Sheep"],
+    "correctAnswers": [2],
+    "reward": 16000
+  },
+  {
+    "id": 7,
+    "question": "Which answer is the longest?",
+    "answers": [
+      "Short",
+      "A bit longer than short",
+      "This is a medium-length sentence",
+      "This is the longest answer because it contains more words than all the other options, making it clearly the longest one."
+    ],
+    "correctAnswers": [3],
+    "reward": 32000
+  },
+  {
+    "id": 8,
+    "question": "Which of these is a fruit?",
+    "answers": ["Apple", "Carrot", "Banana", "Broccoli"],
+    "correctAnswers": [0, 2],
+    "reward": 64000
+  },
+  {
+    "id": 9,
+    "question": "What do we drink when we are thirsty?",
+    "answers": ["Water", "Sand", "Rock", "Fire"],
+    "correctAnswers": [0],
+    "reward": 125000
+  },
+  {
+    "id": 10,
+    "question": "What shape has three sides?",
+    "answers": ["Circle", "Square", "Triangle", "Rectangle", "Hexagon"],
+    "correctAnswers": [2],
+    "reward": 250000
+  },
+  {
+    "id": 11,
+    "question": "How many fingers do humans usually have?",
+    "answers": ["Five", "Seven", "Ten", "Twelve", "Eight"],
+    "correctAnswers": [2],
+    "reward": 500000
+  },
+  {
+    "id": 12,
+    "question": "Which is a day of the week?",
+    "answers": ["January", "Monday", "March", "Summer", "Sunday", "Tuesday"],
+    "correctAnswers": [1, 4],
+    "reward": 1000000
+  }
+]
