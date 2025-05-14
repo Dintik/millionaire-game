@@ -14,7 +14,17 @@ export function getQuestions(): Question[] {
   const result = z.array(QuestionSchema).safeParse(questionsJson)
 
   if (!result.success) {
-    throw new Error('Invalid questions data')
+    // throw new Error('Invalid questions data')
+    console.error('Invalid questions data:', result.error)
+    return [
+      {
+        id: 1,
+        question: 'Sorry, something went wrong',
+        answers: [],
+        correctAnswers: [],
+        reward: 0,
+      },
+    ]
   }
 
   return result.data
