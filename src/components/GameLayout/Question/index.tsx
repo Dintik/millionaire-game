@@ -9,6 +9,7 @@ export function Question() {
   const { restartGame, questions, currentIndex } = useGameStore()
   const question = questions[currentIndex]?.question
 
+  // will reset the state manager to zero after returning from the result page
   useEffect(() => {
     restartGame()
   }, [restartGame])

@@ -17,11 +17,13 @@ export function AnswerList() {
 
   const { correctAnswers, answers, id, reward } = questions[currentIndex]
 
+  // clears status and activeAnswers when moving to the next question
   useEffect(() => {
     setActiveAnswers([])
     setStatus('')
   }, [id])
 
+  // processes the answers to the question
   useEffect(() => {
     if (status === 'wrong') {
       const timeout = setTimeout(() => {
@@ -45,11 +47,13 @@ export function AnswerList() {
   }, [currentIndex, goToNextQuestion, questions.length, router, status])
 
   const handleAnswerClick = (index: number) => {
+    // toggles the activeAnswers
     const updatedAnswers = activeAnswers.includes(index)
       ? activeAnswers.filter((i) => i !== index)
       : [...activeAnswers, index]
     setActiveAnswers(updatedAnswers)
 
+    // if the number of selected answers is not equal to the number of correct answers, return
     if (updatedAnswers.length !== correctAnswers.length) return
 
     if (!isCorrect(updatedAnswers, correctAnswers)) {
