@@ -21,46 +21,46 @@ An interactive quiz game "Who Wants to Be a Millionaire?" developed using modern
 ## Installation
 
 1. Clone the repository:
-   Bash
-
+```bash
 git clone https://github.com/Dintik/millionaire-game.git
 cd millionaire-game
+```
 
 2. Install dependencies:
-   Bash
-
+```bash
 npm install
+```
 
 ## Running the Project
 
 ### Development Mode
-
-Bash
-
+```bash
 npm run dev
-The application will be available at: http://localhost:3000
+```
+The application will be available at: `http://localhost:3000`
 
 ### Production Build
-
-Bash
-
+```bash
 npm run build
 npm start
+```
 
 ## Project Structure
 
+```
 src/
-├── app/ # Next.js app router
-│ ├── page.tsx # Home page
-│ ├── game/ # Game page and logic
-│ ├── result/ # Results page
-│ └── layout.tsx # Root layout
-├── components/ # React components
-├── store/ # State management (Zustand)
-├── data/ # Game data
-├── helpers/ # Utility functions
-├── types/ # TypeScript types
-└── assets/ # Static assets
+├── app/          # Next.js app router
+│   ├── page.tsx  # Home page
+│   ├── game/     # Game page and logic
+│   ├── result/   # Results page
+│   └── layout.tsx # Root layout
+├── components/   # React components
+├── store/        # State management (Zustand)
+├── data/         # Game data
+├── helpers/      # Utility functions
+├── types/        # TypeScript types
+└── assets/       # Static assets
+```
 
 ## Features
 
@@ -71,16 +71,15 @@ src/
 
 ## Available Scripts
 
-- npm run dev - run in development mode
-- npm run build - build the project
-- npm start - run the built project
-- npm run lint - check code with linter
-- npm run format - format code
+- `npm run dev` - run in development mode
+- `npm run build` - build the project
+- `npm start` - run the built project
+- `npm run lint` - check code with linter
+- `npm run format` - format code
 
 ## Development
 
 The project uses:
-
 - ESLint for linting
 - Prettier for code formatting
 - Husky for pre-commit hooks
