@@ -1,0 +1,5 @@
+@mixin diamond-mask {
+  mask: url('/rectangleMask.svg');
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}

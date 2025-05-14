@@ -10,6 +10,7 @@
   margin: 0 auto;
 
   @media (min-width: $dt_bp) {
+    height: max-content;
     width: 100%;
     max-width: none;
     max-height: none;

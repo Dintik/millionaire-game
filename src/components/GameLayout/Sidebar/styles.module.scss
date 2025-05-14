@@ -95,15 +95,15 @@
   }
 
   &__itemBorder {
+    @include diamond-mask;
     padding: 1px;
     background-color: $secondary_color2;
-    mask: url('/rectangleMask.svg');
   }
 
   &__itemInner {
+    @include diamond-mask;
     padding: 6px 24px 7px;
     background-color: $secondary_color4;
-    mask: url('/rectangleMask.svg');
 
     @media (min-width: $dt_bp) {
       padding-top: 7px;
