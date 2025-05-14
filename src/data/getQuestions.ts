@@ -11,21 +11,24 @@ const QuestionSchema = z.object({
 })
 
 export function getQuestions(): Question[] {
-  const result = z.array(QuestionSchema).safeParse(questionsJson)
+  try {
+    const result = z.array(QuestionSchema).safeParse(questionsJson)
 
-  if (!result.success) {
-    // throw new Error('Invalid questions data')
-    console.error('Invalid questions data:', result.error)
+    if (!result.success) {
+      throw new Error('Invalid questions data')
+    }
+
+    return result.data
+  } catch (error) {
+    console.error('Error getting questions:', error)
     return [
       {
         id: 1,
-        question: 'Sorry, something went wrong',
+        question: 'Sorry, something went wrong *_* Please refresh the page..',
         answers: [],
         correctAnswers: [],
         reward: 0,
       },
     ]
   }
-
-  return result.data
 }
